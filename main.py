@@ -1,18 +1,37 @@
+from board import GameBoard
+from ai import ai_pick
 
-from chatbot_logic import respond_to_query
+def main():
+    board = GameBoard()
+    print("Welcome to Tic-Tac-Toe!")
+    print("You're X, and the AI is O. Let's begin!")
+    board.show()
 
-def start_chat():
-    print("Chatbot: Hello! Type something to start a new conversation (type 'exit'/'adieu'/'peace out' to leave).")
+    while not board.finished():
+        if board.turn == 'X':
+            try:
+                move = int(input("Your turn! Pick a spot (0-8): "))
+            except ValueError:
+                print("Oops! Please enter a number between 0 and 8.")
+                continue
 
-    while True:
-        user_message = input("Ankita: ").strip().lower()
+            if not board.place(move):
+                print("That spot is already taken or invalid.")
+                continue
+        else:
+            print("AI is thinking...")
+            move = ai_pick(board)
+            board.place(move)
+            print(f"AI picked spot {move}.")
 
-        if user_message in ["exit", "adieu","peace out"]:
-            print("Chatbot: Thanks for chatting with me.Bye,Bye! Take care dear")
-            break
+        board.show()
 
-        bot_reply = respond_to_query(user_message)
-        print(f"Chatbot: {bot_reply}")
+    # Final result
+    winner = board.check_winner()
+    if winner == 'O':
+        print("The AI wins. Better luck next time!")
+    else:
+        print("It's a draw!")
 
 if __name__ == "__main__":
-    start_chat()
+    main()
