@@ -1,4 +1,4 @@
-# 💡 AI Projects Portfolio by Ankita Aich
+#  AI Projects Portfolio by Ankita Aich
 
 Welcome to my AI Projects Repository of CODSOFT! This collection showcases my hands-on experience with Artificial Intelligence through a variety of real-world mini-projects. Each project demonstrates problem-solving, logic building, and practical implementation using Python and core AI concepts.
 
@@ -6,7 +6,7 @@ Welcome to my AI Projects Repository of CODSOFT! This collection showcases my ha
 
 ##  Projects Overview
 
-## 1. 💬 Rule-Based Chatbot
+## 1.  Rule-Based Chatbot
 
 A simple ChatGPT-style chatbot that responds to user queries using pre-defined rules and keyword matching. It’s ideal for use cases like FAQ systems, customer support bots, or information assistants.
 
